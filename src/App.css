@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Prociono-Regular";
+  src: 
+  url(/fonts/Prociono-Regular-webfont.woff) format("woff"),
+  url(/fonts/Prociono-Regular-webfont.ttf) format("truetype");
+  font-display: swap;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  /* outline: 1px solid #969595; */
+}
+
+body{
+  background-color: #e7e2cc;
+  font-family: "Prociono-Regular", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}

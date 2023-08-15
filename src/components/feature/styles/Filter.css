@@ -1,0 +1,29 @@
+.books-filter {
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+}
+
+.filter_search {
+    grid-column: 1 / 3;
+    margin-bottom: 1rem;
+}
+
+.filter_search>input {
+    width: 100%;
+    padding: .5rem;
+}
+
+.filter_pages {
+    background-color: #d4bc9f;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.filter_genre>select {
+    padding: .3rem;
+    display: flex;
+    align-content: center;
+}
