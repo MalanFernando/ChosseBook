@@ -5,6 +5,10 @@
   grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
 }
 
+.headBM {
+  padding: 1.5rem;
+}
+
 /* Info */
 .cover_info {
   position: relative;
@@ -24,7 +28,8 @@
   margin: 1.5rem 0;
 }
 
-.cover_favorites-btn {
+.cover_favorites-btn,
+.headBM_btn-home {
   outline: 2px solid #080606;
   color: #080606;
   padding-left: .6rem;
@@ -36,18 +41,21 @@
   transition: 200ms linear;
 }
 
-.cover_favorites-btn>i {
-  font-size: .9rem;
-  padding: .6rem .8rem;
+.cover_favorites-btn>i,
+.headBM_btn-home>i {
+  font-size: 1.3rem;
+  padding: .5rem .6rem;
   outline: 2px solid #080606;
   transition: 200ms linear;
 }
 
-.cover_favorites-btn:hover>i {
+.cover_favorites-btn:hover>i,
+.headBM_btn-home:hover>i {
   background-color: #5494a0;
 }
 
-.cover_favorites-btn:hover {
+.cover_favorites-btn:hover,
+.headBM_btn-home:hover {
   transform: translateX(2px) translateY(2px);
   box-shadow: 0px 0px 0px 0px;
 }

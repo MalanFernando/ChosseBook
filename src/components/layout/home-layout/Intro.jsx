@@ -1,16 +1,15 @@
 import { Link } from 'wouter';
-import data from '../../local-data/data.json';
-import './styles/Intro.css';
+import '../styles/Intro&HeadBM.css';
 
-const dataBooks = data.library;
-const arrayRandomBooks = [];
+// const dataBooks = data.library;
+// const arrayRandomBooks = [];
 
-for (let i = 0; i < 3; i++) {
-  const rand = Math.floor(Math.random() * 13);
-  if (!arrayRandomBooks[i]?.book.title) {
-    arrayRandomBooks.push(dataBooks[rand]);
-  }
-}
+// for (let i = 0; i < 3; i++) {
+//   const rand = Math.floor(Math.random() * 13);
+//   if (!arrayRandomBooks[i]?.book.title) {
+//     arrayRandomBooks.push(dataBooks[rand]);
+//   }
+// }
 
 export default function Intro() {
   return (
@@ -26,11 +25,11 @@ export default function Intro() {
                         <svg>tech-logo</svg>
                         <svg>tech-logo</svg> */}
         </div>
-        <Link className="cover_favorites-btn" to="/booklist">
-          Favorites <i className="fa-solid fa-bookmark"></i>
+        <Link className="cover_favorites-btn" to="/bookmark">
+          Favorites <i className="las la-bookmark"></i>
         </Link>
       </div>
-      <div className="cover_media">
+      {/* <div className="cover_media">
         <span className="media-sticker">
           <h2>{dataBooks.length}+</h2>
           <small>
@@ -49,7 +48,7 @@ export default function Intro() {
             );
           })}
         </div>
-      </div>
+      </div> */}
     </header>
   );
 }

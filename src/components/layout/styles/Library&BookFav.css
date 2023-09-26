@@ -27,7 +27,7 @@
 
 .lib_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   margin: 1.5rem 0;
   gap: 2rem;
 }
@@ -47,6 +47,32 @@
 
 .btn-fav:active {
   color: #080d18;
+}
+
+.book-btn {
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  z-index: 5;
+}
+
+
+.like {
+  color: #00000050;
+  font-size: 1.3rem;
+  padding: .3rem;
+}
+
+.favorite {
+  color: #ca2f2f;
+}
+
+.selected {
+  opacity: .6;
 }
 
 .book_author {

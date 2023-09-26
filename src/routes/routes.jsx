@@ -1,5 +1,5 @@
 import Home from '../pages/Home';
-import BookList from '../pages/BookList';
+import BookMark from '../pages/BookMark';
 import NotFound from '../pages/NotFound';
 
 const routes = [
@@ -8,8 +8,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/booklist',
-    component: BookList
+    path: '/bookmark',
+    component: BookMark
   },
   {
     component: NotFound

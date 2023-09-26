@@ -22,6 +22,7 @@ module.exports = {
   plugins: ['react'],
   rules: {
     semi: ['error', 'always'],
-    'space-before-function-paren': ['error', 'never']
+    'space-before-function-paren': ['error', 'never'],
+    'react/prop-types': 'off'
   }
 };
