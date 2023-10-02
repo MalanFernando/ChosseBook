@@ -1,17 +1,30 @@
 import { Link } from 'wouter';
 import '../styles/Intro&HeadBM.css';
-
-// const dataBooks = data.library;
-// const arrayRandomBooks = [];
-
-// for (let i = 0; i < 3; i++) {
-//   const rand = Math.floor(Math.random() * 13);
-//   if (!arrayRandomBooks[i]?.book.title) {
-//     arrayRandomBooks.push(dataBooks[rand]);
-//   }
-// }
+import { useLibrary } from '../../../context/LibraryContext';
+import { useEffect, useState } from 'react';
+import { SaveIcon } from '../../../assets/icons';
+import { CssImg, ReactImg, WouterImg } from '../../../assets/vectors';
 
 export default function Intro() {
+  const { library } = useLibrary();
+  const [recommendedBooks, setRecommendedBooks] = useState([]);
+
+  useEffect(() => {
+    function randomBooks(array) {
+      const cloneLib = [...array];
+
+      for (let i = cloneLib.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cloneLib[i], cloneLib[j]] = [cloneLib[j], cloneLib[i]];
+      }
+      const threeRandBooks = cloneLib.slice(0, 3);
+      return threeRandBooks;
+    }
+
+    const booksRand = randomBooks(library);
+    setRecommendedBooks(booksRand);
+  }, [library]);
+
   return (
     <header className="books-cover">
       <div className="cover_info">
@@ -21,23 +34,23 @@ export default function Intro() {
           want to know more, scroll down and visit my github to see the code.
         </p>
         <div className="info-icons">
-          {/* <svg>tech-logo</svg>
-                        <svg>tech-logo</svg>
-                        <svg>tech-logo</svg> */}
+          <ReactImg className="icon_react" />
+          <CssImg className="icon_css" />
+          <WouterImg className="icon_wouter" />
         </div>
         <Link className="cover_favorites-btn" to="/bookmark">
-          Favorites <i className="las la-bookmark"></i>
+          Favorites <SaveIcon />
         </Link>
       </div>
-      {/* <div className="cover_media">
+      <div className="cover_media">
         <span className="media-sticker">
-          <h2>{dataBooks.length}+</h2>
+          <h2>{library.length}+</h2>
           <small>
             <strong>Books</strong>
           </small>
         </span>
         <div className="media-img">
-          {arrayRandomBooks.map(({ book, id = book.ISBN }) => {
+          {recommendedBooks.map(({ book, id = book.ISBN }) => {
             return (
               <img
                 key={id}
@@ -48,7 +61,7 @@ export default function Intro() {
             );
           })}
         </div>
-      </div> */}
+      </div>
     </header>
   );
 }

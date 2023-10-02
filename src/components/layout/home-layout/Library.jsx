@@ -3,6 +3,7 @@ import { Filter } from '../../feature/Filter';
 import { useLibrary } from '../../../context/LibraryContext';
 import { useFilter } from '../../../context/FilterProvider';
 import { Book } from '../../feature/Book';
+import { InfoCards } from '../../feature/InfoCards';
 
 export default function Library() {
   const { library } = useLibrary();
@@ -23,8 +24,9 @@ export default function Library() {
     <>
       <main id="Library" className="books-library">
         <section className="library">
-          <h3 className="lib_title">Library</h3>
           <Filter />
+          <h3 className="lib_title">Library</h3>
+          <InfoCards/>
           <div className="lib_container">
             {!filterBooks && <p>No existe</p>}
             {filterBooks &&

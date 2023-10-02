@@ -1,0 +1,15 @@
+.content_info {
+  display: flex;
+  gap: 2rem;
+  margin: 1rem 0 2rem;
+}
+
+.content_info>span {
+  display: flex;
+  flex-direction: column;
+}
+
+.content_info h3 {
+  font-size: 1.3rem;
+  font-family: sans-serif;
+}

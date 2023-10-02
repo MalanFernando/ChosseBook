@@ -2,6 +2,7 @@ import { useFilter } from '../../../context/FilterProvider';
 import { useLibrary } from '../../../context/LibraryContext';
 import { Book } from '../../feature/Book';
 import { Filter } from '../../feature/Filter';
+import { InfoCards } from '../../feature/InfoCards';
 import '../styles/Library&BookFav.css';
 
 export default function BookFav() {
@@ -22,10 +23,12 @@ export default function BookFav() {
 
   return (
     <main className="books-library">
-      <section className='library'>
+      <section className="library">
         <Filter />
-        <div className="lib_container">
-          {filterBooks.length === 0 && <p>No existen libros</p>}
+        <h3 className="lib_title">Your Bookmarks</h3>
+        <InfoCards />
+        <div className="bookMark_container">
+          {filterBooks.length === 0 && <p className='bookMark-empty'>Add books for viewing here</p>}
           {filterBooks.length > 0 &&
             filterBooks.map((books) => (
               <Book opacity={false} key={books.book.ISBN} books={books} />

@@ -1,0 +1,19 @@
+.notfound-contain {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.notfound_msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notfound_msg>h2 {
+  font-size: 3rem;
+}

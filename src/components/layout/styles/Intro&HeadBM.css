@@ -18,46 +18,98 @@
   font-size: 5rem;
 }
 
+.headBM_title {
+  font-size: 3.5rem;
+}
+
 @media screen and (min-width: 600px) {
   .info-title {
     font-size: 7rem;
   }
+
+  .headBM_title {
+    font-size: 5rem;
+  }
 }
 
-.info-descri {
-  margin: 1.5rem 0;
+.info-descri,
+.headBM_info {
+  margin: 1.2rem 0 1rem;
 }
 
+.headBM_info {
+  max-width: 450px;
+}
+
+.info-icons {
+  display: flex;
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+
+.info-icons>* {
+  width: 2.4rem;
+}
+
+/* Buttons */
 .cover_favorites-btn,
 .headBM_btn-home {
-  outline: 2px solid #080606;
-  color: #080606;
+  background-color: var(--black);
+  outline: 2px solid var(--black);
+  color: var(--beige);
   padding-left: .6rem;
   display: inline-flex;
   align-items: center;
   gap: .6rem;
-  font-weight: bold;
-  box-shadow: 4px 5px 0px 1px #080606;
+  box-shadow: 5px 5px 0px 1px var(--turquoise);
   transition: 200ms linear;
 }
 
-.cover_favorites-btn>i,
-.headBM_btn-home>i {
-  font-size: 1.3rem;
-  padding: .5rem .6rem;
-  outline: 2px solid #080606;
+.headBM_btn-home {
+  box-shadow: 5px 5px 0px 1px var(--yellow);
+}
+
+.save-icon,
+.home-icon {
+  background-color: var(--beige);
+  color: var(--black);
+  width: 2.3rem;
   transition: 200ms linear;
 }
 
-.cover_favorites-btn:hover>i,
-.headBM_btn-home:hover>i {
-  background-color: #5494a0;
+.cover_favorites-btn:hover .save-icon {
+  background-color: var(--turquoise);
+}
+
+.headBM_btn-home:hover .home-icon {
+  background-color: var(--yellow);
 }
 
 .cover_favorites-btn:hover,
 .headBM_btn-home:hover {
   transform: translateX(2px) translateY(2px);
   box-shadow: 0px 0px 0px 0px;
+}
+
+.headBM-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headBM_img {
+  width: 260px;
+  margin: 0 1rem -3rem 0;
+}
+
+@media screen and (max-width: 650px) {
+  .headBM-container {
+    flex-direction: column;
+  }
+
+  .headBM_img {
+    align-self: center;
+    margin: 0 0 -4rem 0;
+  }
 }
 
 /* Books cover*/
@@ -74,14 +126,14 @@
 }
 
 .media-sticker {
-  background-color: #e49e35;
+  background-color: var(--yellow);
   padding: .4rem;
   transform: rotate(5deg);
   position: absolute;
   right: 50px;
   top: 30px;
   z-index: 10;
-  box-shadow: 5px 5px 0 0 #080606;
+  box-shadow: 4px 4px 0 0 var(--black);
 }
 
 .media-sticker>h2 {

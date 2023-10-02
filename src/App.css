@@ -1,23 +1,118 @@
 @font-face {
   font-family: "Prociono-Regular";
-  src: 
-  url(/fonts/Prociono-Regular-webfont.woff) format("woff"),
-  url(/fonts/Prociono-Regular-webfont.ttf) format("truetype");
+  src:
+    url(/fonts/Prociono-Regular-webfont.woff) format("woff"),
+    url(/fonts/Prociono-Regular-webfont.ttf) format("truetype");
   font-display: swap;
 }
 
-*{
+:root {
+  --beige: #e7e2cc;
+  --aqua: #3cb993;
+  --black: #080d18;
+  --turquoise: #4da395;
+  --yellow: #f1a42f;
+  --orange: #d67143;
+  --purple-fav: #584c94;
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  /* outline: 1px solid #969595; */
 }
 
-body{
-  background-color: #e7e2cc;
+body {
+  background-color: var(--beige);
+  background-image: url(./assets/nnnoise.svg);
   font-family: "Prociono-Regular", sans-serif;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Footer */
+.books-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 6rem 1.5rem .5rem;
+}
+
+.footer_pwb {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pwb-midu {
+  max-width: 90px;
+  transition: 300ms linear;
+}
+
+.pwb-midu:hover {
+  transform: scale(95%);
+}
+
+.footer_social {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-logo {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.logo-tag,
+.pwb-text {
+  font-weight: bold;
+  opacity: .7;
+}
+
+.logo-name {
+  background-color: var(--black);
+  padding: .2rem .4rem;
+  margin: 0 .2rem;
+  color: var(--beige);
+  font-family: sans-serif;
+  box-shadow: 3px 3px 0 0 var(--aqua);
+  transition: 200ms linear;
+}
+
+.logo-name:hover {
+  transform: translateX(1px) translateY(1px);
+  box-shadow: 0 0 0 0;
+}
+
+.logo-name>strong {
+  color: var(--aqua);
+}
+
+.social-icons {
+  font-size: 1.6rem;
+  display: flex;
+  gap: .8rem;
+}
+
+.icon-link {
+  color: var(--black);
+  transition: 300ms linear;
+}
+
+.icon-link:hover {
+  color: #545464;
+}
+
+@media screen and (max-width: 455px) {
+  .books-footer {
+    justify-content: center;
+  }
 }
