@@ -1,5 +1,10 @@
-export async function getData() {
-  const res = await fetch('/src/mocks/data.json');
-  const data = await res.json();
-  return data;
+export const getData = async() => {
+  try {
+    const response = await fetch('/src/mocks/data.json');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error al obtener los datos:', error);
+    throw error;
+  }
 };

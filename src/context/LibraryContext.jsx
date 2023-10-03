@@ -15,12 +15,16 @@ export function LibraryContext({ children }) {
 
   useEffect(() => {
     const resData = async() => {
-      const data = await getData();
-      return dispatchLib({ type: 'GET_DATA', payload: data.library });
+      try {
+        const data = await getData();
+        dispatchLib({ type: 'GET_DATA', payload: data.library });
+        // Data persistence for bookmarks and filters
+        localStorage.setItem('bookMark', JSON.stringify(bookMark));
+      } catch (error) {
+        console.error('Error al obtener los datos:', error);
+      }
     };
     resData();
-    // Data persistence for bookmarks and filters
-    localStorage.setItem('bookMark', JSON.stringify(bookMark));
   }, [bookMark]);
 
   const pages = [...library?.map((books) => books.book.pages)];
