@@ -17,7 +17,7 @@ export function LibraryContext({ children }) {
     const resData = async() => {
       try {
         const data = await getData();
-        dispatchLib({ type: 'GET_DATA', payload: data.library });
+        dispatchLib({ type: 'GET_DATA', payload: data });
         // Data persistence for bookmarks and filters
         localStorage.setItem('bookMark', JSON.stringify(bookMark));
       } catch (error) {
