@@ -13,7 +13,7 @@
 .filter_search>input {
     width: 100%;
     padding: .5rem;
-    background-color: transparent;
+    background-color: var(--beige);
     border: none;
     outline: 2px solid var(--black);
     box-shadow: 4px 4px 0px 2px var(--orange);
@@ -118,10 +118,22 @@
 
 @media screen and (min-width: 620px) {
     .books-filter {
-        grid-template-columns: repeat(4, auto);
-        grid-template-rows: 1fr;
-        justify-content: flex-end;
+        display: flex;
         gap: 1rem;
+    }
+
+    .filter_search {
+        display: flex;
+        width: 100%;
+    }
+
+    .filter_search>input {
+        width: 20rem;
+        padding: .5rem;
+        background-color: var(--beige);
+        border: none;
+        outline: 2px solid var(--black);
+        box-shadow: 4px 4px 0px 2px var(--orange);
     }
 
     .filter_pages {

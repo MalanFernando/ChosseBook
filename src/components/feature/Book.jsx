@@ -31,6 +31,7 @@ export const Book = ({ books, opacity }) => {
           className="book_cover"
           src={books.book.cover}
           alt={books.book.title}
+          loading='lazy'
         />
         <h5 className="book_title">{books.book.title}</h5>
         <span className="book_author">{books.book.author?.name}</span>

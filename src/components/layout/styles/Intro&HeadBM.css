@@ -34,21 +34,21 @@
 
 .info-descri,
 .headBM_info {
-  margin: 1.2rem 0 1rem;
+  margin: 2rem 0 2rem;
+  line-height: 1.5rem;
 }
 
 .headBM_info {
   max-width: 450px;
 }
 
-.info-icons {
-  display: flex;
-  gap: 1rem;
-  margin: 0 0 2rem;
-}
-
-.info-icons>* {
-  width: 2.4rem;
+.icons {
+  outline: 2px solid var(--black);
+  background-color: var(--black);
+  color: var(--beige);
+  border-radius: 2px;
+  padding: 0 .3rem;
+  margin-right: .5rem;
 }
 
 /* Buttons */

@@ -3,26 +3,34 @@ import '../styles/Intro&HeadBM.css';
 import { useLibrary } from '../../../context/LibraryContext';
 import { useEffect, useState } from 'react';
 import { SaveIcon } from '../../../assets/icons';
-import { CssImg, ReactImg, WouterImg } from '../../../assets/vectors';
+
+const randomIndex = Math.floor(Math.random() * 11);
+const randomEndNum = randomIndex + 3;
 
 export default function Intro() {
   const { library } = useLibrary();
   const [recommendedBooks, setRecommendedBooks] = useState([]);
+  const newLibrary = [...library];
+  let randomBooks = 0;
+
+  const randFunc = () => {
+    if (library.length > 0) {
+      if (randomIndex === 0 || randomIndex === 1 || randomIndex === 2) {
+        const newIndex = randomIndex + 3;
+        const randomNewEndNum = newIndex + 3;
+
+        randomBooks = newLibrary.slice(newIndex, randomNewEndNum);
+        setRecommendedBooks(randomBooks);
+      } else {
+        randomBooks = newLibrary.slice(randomIndex, randomEndNum);
+        setRecommendedBooks(randomBooks);
+      }
+    }
+    return randomBooks;
+  };
 
   useEffect(() => {
-    function randomBooks(array) {
-      const cloneLib = [...array];
-
-      for (let i = cloneLib.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [cloneLib[i], cloneLib[j]] = [cloneLib[j], cloneLib[i]];
-      }
-      const threeRandBooks = cloneLib.slice(0, 3);
-      return threeRandBooks;
-    }
-
-    const booksRand = randomBooks(library);
-    setRecommendedBooks(booksRand);
+    randFunc();
   }, [library]);
 
   return (
@@ -30,14 +38,12 @@ export default function Intro() {
       <div className="cover_info">
         <h1 className="info-title">Choose Book</h1>
         <p className="info-descri">
-          This project has been created with the following technologies, if you
-          want to know more, scroll down and visit my github to see the code.
+          This project has been created with the following technologies:{' '}
+          <span className="icons">React</span>
+          <span className="icons">Css</span>
+          <span className="icons">Wouter</span> If you want to know more, scroll
+          down and visit my github to see the code.
         </p>
-        <div className="info-icons">
-          <ReactImg className="icon_react" />
-          <CssImg className="icon_css" />
-          <WouterImg className="icon_wouter" />
-        </div>
         <Link className="cover_favorites-btn" to="/bookmark">
           Favorites <SaveIcon />
         </Link>
@@ -57,6 +63,7 @@ export default function Intro() {
                 className="img_cover"
                 src={book.cover}
                 alt={book.title}
+                loading="lazy"
               />
             );
           })}
