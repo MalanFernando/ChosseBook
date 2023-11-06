@@ -63,6 +63,8 @@ export default function Intro() {
                 className="img_cover"
                 src={book.cover}
                 alt={book.title}
+                width="100%"
+                height="100%"
                 loading="lazy"
               />
             );

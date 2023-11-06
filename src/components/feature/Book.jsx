@@ -22,16 +22,16 @@ export const Book = ({ books, opacity }) => {
   return (
     <div className={`container-book ${isFavorite ? 'choose' : ''}`}>
       <button className="book-btn" onClick={toggleFavorite}>
-        <BookMarkIcon
-          isFavorite={isFavorite}
-        />
+        <BookMarkIcon isFavorite={isFavorite} />
       </button>
-      <div className={`book ${selected ? 'selected' : ''}`}>
+      <div className={`book ${selected ? 'selected ' : ''}`}>
         <img
           className="book_cover"
           src={books.book.cover}
           alt={books.book.title}
-          loading='lazy'
+          width="300"
+          height="420"
+          loading="lazy"
         />
         <h5 className="book_title">{books.book.title}</h5>
         <span className="book_author">{books.book.author?.name}</span>

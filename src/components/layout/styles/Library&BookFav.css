@@ -21,7 +21,7 @@
 }
 
 .book-btn {
-  background-color: var(--purple-fav);
+  background-color: var(--black);
   border: none;
   border-radius: 0 2px 0 12px;
   appearance: none;
@@ -44,7 +44,7 @@
 }
 
 .selected .book_cover {
-  filter: brightness(.5);
+  filter: grayscale(.7);
   opacity: 85%;
 }
 
@@ -58,7 +58,11 @@
 }
 
 .container-book:hover .book_cover {
-  filter: brightness(.6);
+  filter: brightness(.7);
+}
+
+.selected:hover .book_cover {
+  filter: grayscale(.7);
 }
 
 .book_author {
