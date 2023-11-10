@@ -28,17 +28,20 @@ export const HomeIcon = () => {
   );
 };
 
-export const BookMarkIcon = ({ isFavorite }) => {
+export function BookIcon({ isFavorite }) {
   return (
     <svg
-      className={`bookmark-icon w-[48px] h-[48px] text-gray-800 dark:text-white ${isFavorite ? 'favorite' : ''}`}
-      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 14 20"
-      style={{ padding: '.4rem .7rem .5rem .8rem' }}
+      width="20"
+      height="20"
+      viewBox="0 0 12 20"
+      fill="none"
+      className={`bookmark-icon ${isFavorite ? 'favorite' : 'none'}`}
     >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m13 19-6-5-6 5V2a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17Z"/>
+      <path
+        strokeWidth="1.5"
+        d="m13 19-6-5-6 5V2a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17Z"
+      />
     </svg>
   );
-};
+}

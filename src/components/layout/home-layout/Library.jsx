@@ -1,9 +1,9 @@
 import '../styles/Library&BookFav.css';
-import { Filter } from '../../feature/Filter';
 import { useLibrary } from '../../../context/LibraryContext';
 import { useFilter } from '../../../context/FilterProvider';
 import { Book } from '../../feature/Book';
 import { InfoCards } from '../../feature/InfoCards';
+import { Filter } from '../../feature/filter/Filter';
 
 export default function Library() {
   const { library } = useLibrary();
@@ -31,7 +31,7 @@ export default function Library() {
             {!filterBooks && <p>No existe</p>}
             {filterBooks &&
               filterBooks.map((books) => (
-                <Book opacity={true} key={books.book.ISBN} books={books} />
+                <Book key={books.book.ISBN} books={books} opacity={true} />
               ))}
           </div>
         </section>

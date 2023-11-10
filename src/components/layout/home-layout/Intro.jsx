@@ -14,17 +14,9 @@ export default function Intro() {
   let randomBooks = 0;
 
   const randFunc = () => {
-    if (library.length > 0) {
-      if (randomIndex === 0 || randomIndex === 1 || randomIndex === 2) {
-        const newIndex = randomIndex + 3;
-        const randomNewEndNum = newIndex + 3;
-
-        randomBooks = newLibrary.slice(newIndex, randomNewEndNum);
-        setRecommendedBooks(randomBooks);
-      } else {
-        randomBooks = newLibrary.slice(randomIndex, randomEndNum);
-        setRecommendedBooks(randomBooks);
-      }
+    if (library) {
+      randomBooks = newLibrary.slice(randomIndex, randomEndNum);
+      setRecommendedBooks(randomBooks);
     }
     return randomBooks;
   };

@@ -1,4 +1,4 @@
-import { BookMarkIcon } from '../../assets/icons';
+import { BookIcon } from '../../assets/icons';
 import { useLibrary } from '../../context/LibraryContext';
 import { TYPES } from '../../reducers/bookMarkReducer';
 
@@ -22,15 +22,15 @@ export const Book = ({ books, opacity }) => {
   return (
     <div className={`container-book ${isFavorite ? 'choose' : ''}`}>
       <button className="book-btn" onClick={toggleFavorite}>
-        <BookMarkIcon isFavorite={isFavorite} />
+        <BookIcon isFavorite={isFavorite} />
       </button>
-      <div className={`book ${selected ? 'selected ' : ''}`}>
+      <div className={`book ${selected ? 'selected' : ''}`}>
         <img
           className="book_cover"
           src={books.book.cover}
           alt={books.book.title}
-          width="300"
-          height="420"
+          width={300}
+          height={420}
           loading="lazy"
         />
         <h5 className="book_title">{books.book.title}</h5>

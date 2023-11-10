@@ -21,9 +21,11 @@
 }
 
 .book-btn {
+  background: none;
   background-color: var(--black);
   border: none;
   border-radius: 0 2px 0 12px;
+  padding: .3rem .4rem;
   appearance: none;
   position: absolute;
   cursor: pointer;
@@ -33,19 +35,13 @@
 }
 
 .bookmark-icon {
-  width: 2.1rem;
-  fill: transparent;
   stroke: var(--beige);
-  border-radius: 0 2px 0 10px;
+  padding: .1rem;
 }
 
 .favorite {
   fill: var(--beige);
-}
-
-.selected .book_cover {
-  filter: grayscale(.7);
-  opacity: 85%;
+  stroke: none;
 }
 
 .book_cover {
@@ -57,8 +53,13 @@
   box-shadow: 0px 10px 12px -8px #151518c9;
 }
 
-.container-book:hover .book_cover {
+.book:hover .book_cover {
   filter: brightness(.7);
+}
+
+.selected .book_cover {
+  filter: grayscale(.7);
+  opacity: 90%;
 }
 
 .selected:hover .book_cover {
@@ -67,5 +68,5 @@
 
 .book_author {
   font-size: .8rem;
-  opacity: .5;
+  opacity: .7;
 }

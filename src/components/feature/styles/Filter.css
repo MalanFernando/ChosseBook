@@ -6,6 +6,11 @@
     row-gap: 1rem;
 }
 
+.availableFilter {
+    pointer-events: none;
+    filter: grayscale(1);
+}
+
 .filter_search {
     grid-column: 1/3;
 }
