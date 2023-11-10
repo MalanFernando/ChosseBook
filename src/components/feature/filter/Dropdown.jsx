@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLibrary } from '../../../context/LibraryContext';
 import { TYPES } from '../../../reducers/filterReducer';
 import { useFilter } from '../../../context/FilterProvider';
+import { ArrowDownSLine } from '../../../assets/vectors';
 
 export const Dropdown = () => {
   const { library } = useLibrary();
@@ -39,7 +40,7 @@ export const Dropdown = () => {
     <ul id="genre">
       <li className="select">
         <button type="button" onClick={toggleDropdown}>
-          {filter.genre || 'All'} <i className="las la-angle-down"></i>
+          {filter.genre || 'All'} <ArrowDownSLine/>
         </button>
         <ul className={`dropdown ${showDropdown ? 'visible' : ''}`}>
           <li>

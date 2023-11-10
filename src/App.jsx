@@ -3,6 +3,7 @@ import routes from './routes/routes';
 import { LibraryContext } from './context/LibraryContext';
 import miduLogo from './assets/midulog.png';
 import './App.css';
+import { GithubIcon, LinkedinIcon } from './assets/vectors';
 
 export default function App() {
   return (
@@ -24,7 +25,7 @@ export default function App() {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="pwb-midu" src={miduLogo} alt="logotype midudev" />
+            <img className="pwb-midu" width={90} height={25} src={miduLogo} alt="logotype midudev" loading='lazy'/>
           </a>
         </div>
         <div className="footer_social">
@@ -41,20 +42,20 @@ export default function App() {
           </div>
           <div className="social-icons">
             <a
-              className="icon-link"
+              className="github icon-link"
               href="https://github.com/MalanFernando/ChosseBook"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="lab la-github"></i>
+              <GithubIcon/>
             </a>
             <a
-              className="icon-link"
+              className="linkedIn icon-link"
               href="https://www.linkedin.com/in/fernando-david-malan-perugachi-b48b6321a/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="lab la-linkedin-in"></i>
+              <LinkedinIcon/>
             </a>
           </div>
         </div>

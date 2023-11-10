@@ -1,7 +1,7 @@
 import { useFilter } from '../../../context/FilterProvider';
 import { useLibrary } from '../../../context/LibraryContext';
 import { Book } from '../../feature/Book';
-// import { Filter } from '../../feature/filter/Filter';
+import { Filter } from '../../feature/filter/Filter';
 import { InfoCards } from '../../feature/InfoCards';
 import '../styles/Library&BookFav.css';
 
@@ -21,12 +21,12 @@ export default function BookFav() {
     );
   });
 
-  // const available = bookMark?.fav.length > 0 ? '' : 'availableFilter';
+  const available = bookMark?.fav.length > 0 ? '' : 'availableFilter';
 
   return (
     <main className="books-library">
       <section className="library">
-        {/* <Filter availableFilter={available} /> */}
+        <Filter availableFilter={available} />
         <h3 className="lib_title">Your Bookmarks</h3>
         <InfoCards />
         <div className="bookMark_container">
