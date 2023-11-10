@@ -46,6 +46,7 @@ export default function App() {
               href="https://github.com/MalanFernando/ChosseBook"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label='github icon'
             >
               <GithubIcon/>
             </a>
@@ -54,6 +55,7 @@ export default function App() {
               href="https://www.linkedin.com/in/fernando-david-malan-perugachi-b48b6321a/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label='linkedIn icon'
             >
               <LinkedinIcon/>
             </a>

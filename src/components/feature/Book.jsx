@@ -21,7 +21,7 @@ export const Book = ({ books, opacity }) => {
 
   return (
     <div className={`container-book ${isFavorite ? 'choose' : ''}`}>
-      <button className="bookmark-btn" onClick={toggleFavorite}>
+      <button className="bookmark-btn" onClick={toggleFavorite} aria-label='bookmark button'>
         <BookIcon isFavorite={isFavorite} />
       </button>
       <div className={`book ${selected ? 'selected' : ''}`}>
@@ -30,7 +30,7 @@ export const Book = ({ books, opacity }) => {
           src={books.book.cover}
           alt={books.book.title}
           width={300}
-          height={420}
+          height={200}
           loading="lazy"
         />
         <h4 className="book_title">{books.book.title}</h4>
